@@ -83,4 +83,37 @@ public class LinkedList {
 		//change head of the list to the last node.
 		head = current;
 	}
+	
+	public void Print()
+	{
+		Node current = head;
+		while(current.next != null)
+		{
+			System.out.println(current.data); // invokes Object.toString()
+			//All Java objects have a toString() method, which is invoked when you try and print the object.
+			//This method is defined in the Object class (the superclass of all Java objects). 
+			//By default, toString() method output will be formated as ObjectType@HashCode.
+			//default definition return getClass().getName() + "@" + Integer.toHexString(hashCode());
+			//To print custom data when you call System.out.println(Object), you must override the toString() method in your class.
+//			class animal {
+//			    private String name;
+//			   
+//				@Override
+//			    public String toString()
+//			    {
+//			        return name;
+//			    }
+//			}
+//
+//			class B {
+//			    public static void main(String args[])
+//			    {
+//			        animal obj = new animal();
+//			        System.out.println(obj);
+//			    }
+//			}
+			
+			current = current.next;
+		}
+	}
 }
